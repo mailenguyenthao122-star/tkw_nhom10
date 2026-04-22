@@ -1,0 +1,76 @@
+.main-footer {
+    background-color: #1a4d32;
+    color: white;
+    padding: 60px 0 20px 0;
+    margin-top: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.footer-col {
+    flex: 1; 
+}
+
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links li a {
+    color: #cbd5e0; 
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.footer-links li a:hover {
+    color: #ffca28; 
+}
+
+.contact-info {
+    color: #cbd5e0;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    display:block;
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #eeeff1;
+    clear:both;
+    width:100%;
+}
+
+.social-icons {
+    display: flex;           
+    gap: 15px;                 /* Tạo khoảng cách giữa các icon là 15px */
+    margin-top: 15px; /* Đẩy cả dàn icon xuống một chút so với thông tin liên hệ phía trên */
+    justify-content: center;
+}
+
+.social-icons a {
+    color: white;              /* Màu icon mặc định là trắng */
+    font-size: 1.2rem;         /* Phóng to icon một chút cho dễ nhìn */
+}

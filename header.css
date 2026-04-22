@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+}
+.Thanh_tinh_nang {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 10%;
+    background-color: #1a4d32; 
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    height: 50px;
+    width: auto;
+    border-radius: 10px;
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.header {
+    display: flex; 
+    list-style: none; 
+}
+
+.header li {
+    margin-left: 30px; 
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.header a:hover {
+    color: #ffca28;
+}
+
+.header a.active {
+    color: #ffca28 ;
+    font-weight: bold;
+    pointer-events: none; 
+}

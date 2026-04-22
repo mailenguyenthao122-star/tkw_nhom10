@@ -1,0 +1,56 @@
+.Trang_chu {
+    position: relative; 
+    width: 100%;
+    height: 96vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden;
+}
+.Trang_chu-content {  
+    z-index: 3;
+    text-align: center; 
+    color: white; 
+    width: 100%;
+    padding: 20px;
+}
+.Trang_chu-content h1 {
+    font-size: clamp(1.5rem, 5vw, 8rem);
+    margin-bottom: 15px;
+    font-weight: bold;
+    width: 100%;
+}
+.Trang_chu-content p{
+    font-size: clamp(1rem, 2.5vw, 2rem);
+}
+.Trang_chu-image { 
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    position:absolute;
+}
+.Trang_chu-image img { 
+    width: 100%; 
+    height: 100%;
+    z-index:1;
+    display: block;
+    margin: 0;
+}
+.Dat_san_ngay {
+    display: inline-block;
+    background-color: #1a4d32; 
+    color: white;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    padding: 15px 0px;
+    margin: 30px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    max-width: 300px;
+    width:90%;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.Dat_san_ngay:hover {
+    color: #ffca28 ;
+}
+

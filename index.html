@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <Title>Trang chủ</Title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+<section class="Trang_chu">
+    <div class="Trang_chu-content">
+        <h1>Đặt sân chơi pickleball dễ dàng</h1>
+        <p>Chọn sân, chọn giờ, đặt ngay chỉ vài cú nhấp chuột!</p>
+        <a href="#" class="Dat_san_ngay">Đặt sân ngay</a>
+    </div>
+    <div class="Trang_chu-image">
+        <img src="Pickleball.jpg" alt="Sân Pickleball">
+    </div>
+</section>
+<div id="footer-placeholder"></div>
+<script>
+    fetch('header.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+
+            const currentPage = window.location.pathname.split("/").pop() || "index.html";
+            const navLinks = document.querySelectorAll('.header a');
+
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+    fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Không tìm thấy file footer.html"));
+            });
+        });
+</script>
+</body>
+</html>
