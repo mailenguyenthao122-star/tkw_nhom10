@@ -65,12 +65,12 @@
 
 .social-icons {
     display: flex;           
-    gap: 15px;                 /* Tạo khoảng cách giữa các icon là 15px */
-    margin-top: 15px; /* Đẩy cả dàn icon xuống một chút so với thông tin liên hệ phía trên */
+    gap: 15px;              
+    margin-top: 15px; 
     justify-content: center;
 }
 
 .social-icons a {
-    color: white;              /* Màu icon mặc định là trắng */
-    font-size: 1.2rem;         /* Phóng to icon một chút cho dễ nhìn */
+    color: white;            
+    font-size: 1.2rem;       
 }
