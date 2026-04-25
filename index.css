@@ -1,56 +1,185 @@
 .Trang_chu {
-    position: relative; 
     width: 100%;
-    height: 96vh; 
+    min-height: 100vh;
     display: flex;
-    justify-content: center; 
-    align-items: center;
+    background-color: #fff;
     overflow: hidden;
 }
-.Trang_chu-content {  
-    z-index: 3;
-    text-align: center; 
-    color: white; 
+
+.Trang_chu-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
     width: 100%;
-    padding: 20px;
-}
-.Trang_chu-content h1 {
-    font-size: clamp(1.5rem, 5vw, 8rem);
-    margin-bottom: 15px;
-    font-weight: bold;
-    width: 100%;
-}
-.Trang_chu-content p{
-    font-size: clamp(1rem, 2.5vw, 2rem);
-}
-.Trang_chu-image { 
-    height: 100vh;
-    width: 100%;
-    object-fit: cover;
-    position:absolute;
-}
-.Trang_chu-image img { 
-    width: 100%; 
     height: 100%;
-    z-index:1;
-    display: block;
-    margin: 0;
+    align-items: start; 
 }
-.Dat_san_ngay {
-    display: inline-block;
-    background-color: #1a4d32; 
-    color: white;
-    font-size: clamp(1rem, 2.5vw, 2rem);
-    padding: 15px 0px;
-    margin: 30px 30px;
-    font-weight: bold;
-    cursor: pointer;
-    max-width: 300px;
-    width:90%;
+
+.Trang_chu-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 550px 40px 0 60px; 
+}
+
+.Trang_chu-center {
+    height: 100vh; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.Trang_chu-center img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: bottom; 
+}
+
+.Trang_chu-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    padding: 300px 40px 0 20px; 
+}
+
+.poster-card {
+    width: 100%;
+    height: 300px; 
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #222;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+
+.Trang_chu-left h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--text-white);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.Trang_chu-left p {
+    color: #1f1e1e;
+    font-size: 1.1rem;
+    max-width: 550px;
+    margin-bottom: 40px;
+}
+
+.group-btn {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.btn-primary {
+    background: #098868;
+    color: #000;
+    padding: 15px 35px;
+    border-radius: 50px;
     text-decoration: none;
-    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
 }
-.Dat_san_ngay:hover {
-    color: #ffca28 ;
+
+.btn-outline {
+    border: 1px solid #333;
+    color: rgb(43, 7, 164);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.stats {
+    display: flex;
+    gap: 40px;
+    border-top: 1px solid #222;
+    padding-top: 30px;
+}
+
+.stat-item h3 {
+    font-size: 1.8rem;
+    color: rgb(29, 86, 29);
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    color: #666;
+}
+.poster-card:hover {
+    transform: scale(1.02);
+}
+
+.poster-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.poster-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.poster-info h4 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.poster-info button {
+    background: #1a4d32;
+    color: #4ade80;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .Trang_chu {
+        height: auto;
+    }
+
+    .Trang_chu-container {
+        display: flex;
+        flex-direction: column; 
+        grid-template-columns: none; 
+        gap: 30px; 
+    
+    }
+
+    .Trang_chu-left,.Trang_chu-center,  
+    .Trang_chu-right {
+        width: 100%;
+        text-align: center; 
+        padding: 10px;
+    }
+
+    .Trang_chu-center {
+        order: -1; 
+        height: 90vh; 
+    }
+
+    .Trang_chu-left h1 {
+        font-size: 2rem; 
+    }
+
+    .group-btn {
+        justify-content: center; 
+    }
+
+    .stats {
+        justify-content: center;
+        gap: 20px;
+    }
 }
 
