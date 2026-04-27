@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pickleball Hà Nội</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="navbar-brand" onclick="showPage('home')">
+      <span class="bico">🏓</span> Pickleball
+    </a>
+    <ul class="navbar-links">
+      <li><a data-page="home" onclick="showPage('home')">Trang chủ</a></li>
+      <li><a data-page="courts" onclick="showPage('courts')">Sân</a></li>
+      <li><a data-page="booking" onclick="showPage('booking')">Đặt sân</a></li>
+      <li><a data-page="services" onclick="showPage('services')">Dịch vụ</a></li>
+      <li><a data-page="login" onclick="showPage('login')">Đăng nhập</a></li>
+      <li><a data-page="register" onclick="showPage('register')">Đăng ký</a></li>
+    </ul>
+    <button class="navbar-cta" onclick="showPage('booking')">Đặt ngay</button>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+
+  <div id="page-home" class="page">
+    <section class="home-hero">
+      <div class="home-hero__content">
+        <p class="eyebrow">Nền tảng đặt sân pickleball cho sinh viên và người chơi tại Hà Nội</p>
+        <h1>Đặt sân pickleball nhanh, rõ giá, xem lịch trống trong vài bước</h1>
+        <p class="home-hero__desc">
+          Tổng hợp danh sách sân, dịch vụ đi kèm, thông tin chi tiết và luồng thanh toán mô phỏng
+          thành một bài web hoàn chỉnh cho nhóm.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" onclick="showPage('courts')">Khám phá sân</button>
+          <button class="btn btn-outline btn-lg" onclick="showPage('booking')">Đặt sân nhanh</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong id="heroCourtCount">6+</strong>
+            <span>Sân đang hiển thị</span>
+          </div>
+          <div class="hero-stat">
+            <strong>9</strong>
+            <span>Dịch vụ bổ sung</span>
+          </div>
+          <div class="hero-stat">
+            <strong>4.8/5</strong>
+            <span>Điểm đánh giá trung bình</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-hero__panel">
+        <div class="hero-visual-card">
+          <div class="hero-visual-card__overlay">
+            <p class="hero-card__label">Không khí thi đấu</p>
+            <h3>Pickleball đang phát triển mạnh tại các cụm sân trong nhà và ngoài trời</h3>
+            <p>Thiết kế giao diện theo hướng hiện đại, dùng màu sân đấu và ảnh nền để phần mở đầu trực quan hơn.</p>
+          </div>
+        </div>
+
+        <div class="hero-info-grid">
+          <div class="hero-card hero-card--primary">
+            <p class="hero-card__label">Thông tin nhanh</p>
+            <h3>Tổng quan pickleball</h3>
+            <div class="info-table">
+              <div class="info-row"><span>Loại hình</span><strong>Vợt kết hợp tennis và bóng bàn</strong></div>
+              <div class="info-row"><span>Số người chơi</span><strong>2 người hoặc 4 người</strong></div>
+              <div class="info-row"><span>Độ tuổi phù hợp</span><strong>Học sinh, sinh viên, người đi làm</strong></div>
+              <div class="info-row"><span>Tốc độ tiếp cận</span><strong>Dễ học, dễ tổ chức giao lưu</strong></div>
+            </div>
+          </div>
+
+          <div class="hero-card hero-card--light hero-card--stats">
+            <p class="hero-card__label">Số liệu hệ thống</p>
+            <h3>Phạm vi dữ liệu trong bài</h3>
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <strong>40+</strong>
+                <span>Tổng sân nhỏ đang được mô phỏng</span>
+              </div>
+              <div class="mini-stat">
+                <strong>6</strong>
+                <span>Cụm sân chính tại Hà Nội</span>
+              </div>
+              <div class="mini-stat">
+                <strong>9</strong>
+                <span>Dịch vụ đi kèm</span>
+              </div>
+              <div class="mini-stat">
+                <strong>633</strong>
+                <span>Lượt đánh giá mẫu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="sec-header">
+        <h2 class="sec-title">Quy trình đặt sân</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-icon">1</span>
+          <h3>Chọn cụm sân</h3>
+          <p>Xem khu vực, mức giá, khung giờ hoạt động và số lượng sân trước khi đi vào bước đặt lịch.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">2</span>
+          <h3>Chọn giờ và dịch vụ</h3>
+          <p>Người dùng có thể chọn nhiều khung giờ, nhiều sân cùng lúc và thêm các dịch vụ hỗ trợ ngay trên form.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">3</span>
+          <h3>Xác nhận đặt sân</h3>
+          <p>Kiểm tra lại đơn, chọn hình thức thanh toán và nhận mã xác nhận mô phỏng để hoàn tất quy trình.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-gray">
+      <div class="sec-header">
+        <h2 class="sec-title">Sân nổi bật</h2>
+        <button class="btn btn-outline btn-sm" onclick="showPage('courts')">Xem tất cả</button>
+      </div>
+      <div class="courts-grid" id="featured-courts-grid"></div>
+    </section>
+
+    <section class="section section-white">
+      <div class="home-cta">
+        <div>
+          <p class="eyebrow eyebrow-dark">Sẵn sàng đặt sân</p>
+          <h2>Chọn sân, xem lịch trống và bắt đầu đặt ngay trong vài bước</h2>
+        </div>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-md" onclick="showPage('booking')">Đặt sân</button>
+          <button class="btn btn-ghost btn-md" onclick="showPage('register')">Đăng ký</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <div class="footer-brand-name">🏓 Pickleball </div>
+        <div class="footer-brand-desc">Website tổng hợp thông tin sân pickleball, dịch vụ và luồng đặt sân trực quan cho bài nhóm.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Điều hướng</h4>
+        <ul>
+          <li><a onclick="showPage('home')">Trang chủ</a></li>
+          <li><a onclick="showPage('courts')">Danh sách sân</a></li>
+          <li><a onclick="showPage('services')">Dịch vụ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên hệ</h4>
+        <ul>
+          <li><a href="tel:18006868">📞 1800 6868</a></li>
+          <li><a href="mailto:info@pickleballnhom10.vn">✉️ info@pickleballnhom10.vn</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tài khoản</h4>
+        <ul>
+          <li><a onclick="showPage('login')">Đăng nhập</a></li>
+          <li><a onclick="showPage('register')">Đăng ký</a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="footer-bottom">
+      <p>© 2026 Pickleball Nhom 10.</p>
+      <p>Bài web nhóm môn thiết kế web.</p>
+    </div>
+  </div>
+
+  <div id="page-courts" class="page">
+    <div class="page-header">
+      <h1>Danh sách sân</h1>
+      <p>Chọn sân phù hợp, lọc nhanh theo khu vực và mức giá.</p>
+    </div>
+
+    <div class="search-wrap">
+      <div class="search-inner">
+        <div class="sf">
+          <label>Khu vực</label>
+          <select id="filter-district">
+            <option value="all">Hà Nội - Tất cả quận</option>
+            <option value="Cầu Giấy">Cầu Giấy</option>
+            <option value="Tây Hồ">Tây Hồ</option>
+            <option value="Đống Đa">Đống Đa</option>
+            <option value="Hoàng Mai">Hoàng Mai</option>
+            <option value="Hai Bà Trưng">Hai Bà Trưng</option>
+            <option value="Long Biên">Long Biên</option>
+          </select>
+        </div>
+        <div class="sf">
+          <label>Ngày chơi</label>
+          <input type="date" id="play-date">
+        </div>
+        <div class="sf">
+          <label>Khung giờ</label>
+          <select id="filter-time">
+            <option value="all">Bất kỳ</option>
+            <option value="morning">Sáng (06:00-12:00)</option>
+            <option value="afternoon">Chiều (13:00-17:00)</option>
+            <option value="evening">Tối (18:00-22:00)</option>
+          </select>
+        </div>
+        <div class="sf">
+          <label>Giá tối đa</label>
+          <select id="filter-price">
+            <option value="all">Bất kỳ</option>
+            <option value="80000">Dưới 80.000đ/h</option>
+            <option value="90000">Dưới 90.000đ/h</option>
+            <option value="100000">Dưới 100.000đ/h</option>
+          </select>
+        </div>
+        <button class="btn-search" onclick="applyFilters()">Lọc sân</button>
+      </div>
+    </div>
+
+    <section class="section section-gray">
+      <div class="sec-header">
+        <h2 class="sec-title">Tất cả sân</h2>
+        <span class="sec-count" id="courts-count"></span>
+      </div>
+      <div class="courts-grid" id="courts-grid"></div>
+      <p class="empty-state" id="courts-empty" hidden>Không có sân phù hợp với bộ lọc hiện tại.</p>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <div class="footer-brand-name">🏓 Pickleball </div>
+        <div class="footer-brand-desc">Tổng hợp sân pickleball tại Hà Nội với thông tin giá, giờ mở cửa và tiện ích rõ ràng.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Khám phá</h4>
+        <ul>
+          <li><a onclick="showPage('home')">Trang chủ</a></li>
+          <li><a onclick="showPage('booking')">Đặt sân</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hỗ trợ</h4>
+        <ul>
+          <li><a onclick="toast('Hotline: 1800 6868','ok')">Hotline</a></li>
+          <li><a onclick="showPage('login')">Đăng nhập</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Demo</h4>
+        <ul>
+          <li><a onclick="showPage('services')">Dịch vụ</a></li>
+          <li><a onclick="showPage('payment')">Thanh toán</a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="footer-bottom">
+      <p>© 2026 Pickleball Nhom 10.</p>
+      <p>Giao diện demo cho nhóm.</p>
+    </div>
+  </div>
+
+  <div id="page-booking" class="page">
+    <div class="page-header">
+      <h1>Đặt sân</h1>
+      <p>Điền thông tin, chọn giờ và dịch vụ để sang bước xác nhận.</p>
+    </div>
+
+    <section class="section section-gray">
+      <div class="booking-layout">
+        <div class="booking-intro">
+          <h2>Đặt sân trong <em>vòng 60 giây</em></h2>
+          <p>Toàn bộ quy trình từ chọn sân, chọn giờ, thêm dịch vụ đến thanh toán được gom vào một bài web duy nhất.</p>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-txt"><h4>Chọn sân và ngày</h4><p>Danh sách sân được đồng bộ với dữ liệu ở trang danh sách.</p></div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-txt"><h4>Chọn khung giờ</h4><p>Ô trắng là còn trống, ô xanh là đang chọn, ô xám là đã được đặt.</p></div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-txt"><h4>Thêm dịch vụ</h4><p>Có thể thêm thuê vợt, huấn luyện viên, cà phê và nhiều tiện ích khác.</p></div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-txt"><h4>Xác nhận thanh toán</h4><p>Mô phỏng 2 hình thức thanh toán để hoàn thiện luồng bài tập lớn.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div class="form-card-title">Thông tin đặt sân</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Họ và tên</label>
+              <input class="form-control" type="text" id="f-name" placeholder="Nguyễn Văn A">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Số điện thoại</label>
+              <input class="form-control" type="tel" id="f-phone" placeholder="09x xxx xxxx">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Chọn sân</label>
+            <select class="form-control" id="f-court"></select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Ngày chơi</label>
+              <input class="form-control" type="date" id="f-date">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Số sân đặt</label>
+              <select class="form-control" id="f-num">
+                <option value="1">1 sân</option>
+                <option value="2">2 sân</option>
+                <option value="3">3 sân</option>
+                <option value="4">4 sân</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Chọn khung giờ</label>
+            <div class="slots-grid" id="main-slots"></div>
+            <div class="slot-legend">
+              <span><span class="ld ld-f"></span>Còn trống</span>
+              <span><span class="ld ld-t"></span>Đã đặt</span>
+              <span><span class="ld ld-s"></span>Đang chọn</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Dịch vụ thêm</label>
+            <div class="addon-grid" id="main-addons"></div>
+          </div>
+
+          <button class="form-submit" onclick="goToPayment()">Tiếp tục thanh toán</button>
+          <p class="form-note">Thông tin dùng để mô phỏng demo, không kết nối thanh toán thật.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="page-services" class="page">
+    <div class="page-header">
+      <h1>Dịch vụ thêm</h1>
+      <p>Các tiện ích đi kèm khi đặt sân để bài web đầy đủ nội dung hơn.</p>
+    </div>
+
+    <section class="section section-green">
+      <div class="sec-header">
+        <h2 class="sec-title sec-title-white">Tất cả dịch vụ</h2>
+        <span class="sec-count sec-count-white" id="services-count"></span>
+      </div>
+      <div class="services-grid" id="services-grid"></div>
+    </section>
+
+    <section class="section section-white">
+      <div style="max-width:720px;margin:0 auto;text-align:center">
+        <div style="font-size:2rem;margin-bottom:.8rem">🏓</div>
+        <h2 style="font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.5rem">Tất cả dịch vụ đều có thể gắn với luồng đặt sân</h2>
+        <p style="color:var(--text-muted);font-size:.88rem;margin-bottom:1.2rem">Phần này giúp bài có thêm chiều sâu nội dung và thể hiện được hướng phát triển sản phẩm.</p>
+        <button class="btn btn-primary btn-md" onclick="showPage('booking')">Đặt sân ngay</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="page-login" class="page">
+    <div class="page-header">
+      <h1>Đăng nhập</h1>
+      <p>Đăng nhập để quản lý lịch đặt sân và lưu thông tin người chơi.</p>
+    </div>
+
+    <section class="section section-gray auth-section">
+      <div class="auth-shell">
+        <div class="auth-intro">
+          <p class="eyebrow eyebrow-dark">Khu vực đăng nhập</p>
+          <h2>Đăng nhập để xem lịch sử đặt sân và nhận mã xác nhận nhanh hơn</h2>
+          <p>Phần đăng nhập được tách riêng để giao diện rõ ràng hơn và thuận tiện khi trình bày từng chức năng.</p>
+          <div class="auth-benefits">
+            <span>Xem lịch sử đặt sân</span>
+            <span>Lưu thông tin người chơi</span>
+            <span>Nhận mã xác nhận nhanh</span>
+          </div>
+        </div>
+
+        <div class="auth-box auth-box--main">
+          <form id="login-form" class="auth-form" onsubmit="submitAuth(event, 'login')">
+            <div class="input-group">
+              <label>Email / Số điện thoại</label>
+              <input type="text" id="login-account" placeholder="Nhập email hoặc số điện thoại">
+            </div>
+            <div class="input-group">
+              <label>Mật khẩu</label>
+              <input type="password" id="login-password" placeholder="Nhập mật khẩu">
+            </div>
+            <button type="submit" class="auth-button">Đăng nhập</button>
+            <p class="auth-switch">Chưa có tài khoản? <a onclick="showPage('register')">Đăng ký ngay</a></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="page-register" class="page">
+    <div class="page-header">
+      <h1>Đăng ký</h1>
+      <p>Tạo tài khoản mới để đặt sân nhanh hơn trong những lần tiếp theo.</p>
+    </div>
+
+    <section class="section section-gray auth-section">
+      <div class="auth-shell">
+        <div class="auth-intro">
+          <p class="eyebrow eyebrow-dark">Khu vực đăng ký</p>
+          <h2>Tạo tài khoản để bắt đầu đặt sân, lưu lịch chơi và quản lý đơn đặt</h2>
+          <p>Phần đăng ký được tách riêng để người xem dễ theo dõi hơn thay vì gộp chung với form đăng nhập.</p>
+          <div class="auth-benefits">
+            <span>Tạo hồ sơ người chơi</span>
+            <span>Đặt sân nhanh hơn</span>
+            <span>Quản lý đơn đặt sân</span>
+          </div>
+        </div>
+
+        <div class="auth-box auth-box--main">
+          <form id="register-form" class="auth-form" onsubmit="submitAuth(event, 'register')">
+            <div class="input-group">
+              <label>Họ và tên</label>
+              <input type="text" id="register-name" placeholder="Nhập họ và tên">
+            </div>
+            <div class="input-group">
+              <label>Email / Số điện thoại</label>
+              <input type="text" id="register-account" placeholder="Nhập email hoặc số điện thoại">
+            </div>
+            <div class="input-group">
+              <label>Mật khẩu</label>
+              <input type="password" id="register-password" placeholder="Tạo mật khẩu">
+            </div>
+            <div class="input-group">
+              <label>Xác nhận mật khẩu</label>
+              <input type="password" id="register-confirm" placeholder="Nhập lại mật khẩu">
+            </div>
+            <button type="submit" class="auth-button">Tạo tài khoản</button>
+            <p class="auth-switch">Đã có tài khoản? <a onclick="showPage('login')">Đăng nhập</a></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="page-court-detail" class="page">
+    <div style="padding-top:60px">
+      <div class="detail-hero">
+        <div class="detail-hero-bg"></div>
+        <div class="detail-hero-grad"></div>
+        <button class="btn-back" onclick="showPage('courts')">Quay lại</button>
+        <div class="detail-hero-info">
+          <h1 id="cd-name">-</h1>
+          <div class="detail-meta">
+            <span id="cd-loc"></span>
+            <span id="cd-courts-count"></span>
+            <span id="cd-status"></span>
+            <span id="cd-price"></span>
+            <span id="cd-hours"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-body">
+        <div>
+          <div class="detail-sec-title">Vị trí sân</div>
+          <div class="map-box">
+            <iframe id="cd-map" src="" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="map-caption" id="cd-map-cap"></div>
+
+          <div class="detail-sec-title" style="margin-top:1.8rem">Tiện ích</div>
+          <div class="fac-grid" id="cd-fac"></div>
+
+          <div class="detail-sec-title">Đánh giá</div>
+          <div class="rating-block">
+            <div class="rating-big" id="cd-rating-num">-</div>
+            <div class="rating-sub" id="cd-rating-sub">-</div>
+            <div class="rating-bars">
+              <div class="rbar-row"><span>5★</span><div class="rbar-track"><div class="rbar-fill"></div></div><span id="rb5">-</span></div>
+              <div class="rbar-row"><span>4★</span><div class="rbar-track"><div class="rbar-fill"></div></div><span id="rb4">-</span></div>
+              <div class="rbar-row"><span>3★</span><div class="rbar-track"><div class="rbar-fill"></div></div><span id="rb3">-</span></div>
+              <div class="rbar-row"><span>2★</span><div class="rbar-track"><div class="rbar-fill"></div></div><span id="rb2">-</span></div>
+              <div class="rbar-row"><span>1★</span><div class="rbar-track"><div class="rbar-fill"></div></div><span id="rb1">-</span></div>
+            </div>
+          </div>
+          <div class="reviews-list" id="cd-reviews"></div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title" id="cd-sidebar-title">Đặt sân ngay</div>
+
+          <div class="form-group">
+            <label class="form-label">Ngày chơi</label>
+            <input class="form-control" type="date" id="cd-date">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Số sân đặt</label>
+            <select class="form-control" id="cd-num">
+              <option value="1">1 sân</option>
+              <option value="2">2 sân</option>
+              <option value="3">3 sân</option>
+              <option value="4">4 sân</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Chọn khung giờ</label>
+            <div class="slots-grid" id="cd-slots"></div>
+            <div class="slot-legend">
+              <span><span class="ld ld-f"></span>Trống</span>
+              <span><span class="ld ld-t"></span>Đã đặt</span>
+              <span><span class="ld ld-s"></span>Chọn</span>
+            </div>
+          </div>
+
+          <button class="form-submit" onclick="bookFromDetail()">Đặt sân này</button>
+          <p class="form-note">Đặt trực tiếp từ trang chi tiết nếu người dùng đã chọn được sân phù hợp.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-payment" class="page">
+    <div class="pay-wrap">
+      <div class="pay-con">
+        <button class="btn btn-ghost btn-sm" style="margin-bottom:1.3rem" onclick="showPage('booking')">Quay lại</button>
+        <div class="pay-head">
+          <h1>Xác nhận và thanh toán</h1>
+          <p>Kiểm tra lại thông tin trước khi xác nhận đặt sân.</p>
+        </div>
+
+        <div class="pay-grid">
+          <div style="display:flex;flex-direction:column;gap:1.1rem">
+            <div class="pay-card">
+              <div class="pay-card-title">Thông tin đặt sân</div>
+              <div class="sum-row"><span class="sk">Sân</span><span class="sv" id="p-court">-</span></div>
+              <div class="sum-row"><span class="sk">Ngày</span><span class="sv" id="p-date">-</span></div>
+              <div class="sum-row"><span class="sk">Khung giờ</span><span class="sv" id="p-slots">-</span></div>
+              <div class="sum-row"><span class="sk">Số sân</span><span class="sv" id="p-num">-</span></div>
+              <div class="sum-row"><span class="sk">Giá/giờ</span><span class="sv" id="p-price">-</span></div>
+            </div>
+
+            <div class="pay-card">
+              <div class="pay-card-title">Dịch vụ thêm</div>
+              <div id="p-addons"></div>
+            </div>
+
+            <div class="pay-card">
+              <div class="pay-card-title">Chi phí</div>
+              <div class="sum-row"><span class="sk">Tiền sân</span><span class="sv" id="p-ctotal">-</span></div>
+              <div class="sum-row"><span class="sk">Dịch vụ thêm</span><span class="sv" id="p-atotal">0đ</span></div>
+              <div class="sum-row"><span class="sk">Phí nền tảng</span><span class="sv">Miễn phí</span></div>
+              <div class="sum-total">
+                <span class="stk">Tổng cộng</span>
+                <span class="stv" id="p-grand">-</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pay-card">
+            <div class="pay-card-title">Hình thức thanh toán</div>
+            <div class="pay-tabs">
+              <button class="pay-tab tab-active" data-tab="direct" onclick="setPayTab('direct')">
+                <span class="t-ico">💵</span>Trực tiếp
+              </button>
+              <button class="pay-tab" data-tab="transfer" onclick="setPayTab('transfer')">
+                <span class="t-ico">🏦</span>Chuyển khoản
+              </button>
+            </div>
+
+            <div id="pd-direct">
+              <div class="direct-box">
+                <strong>Thanh toán tại sân</strong><br><br>
+                Đến trước 15 phút để làm thủ tục check-in và xuất trình mã đặt sân.<br><br>
+                Chấp nhận tiền mặt, VNPay, MoMo và ZaloPay.
+              </div>
+              <button class="btn-confirm" onclick="confirmPay()">Xác nhận đặt sân</button>
+            </div>
+
+            <div id="pd-transfer" style="display:none">
+              <div class="bank-box">
+                <div class="bank-name-lbl">🏦 Vietcombank</div>
+                <div class="bank-row">
+                  <span class="bk">Số tài khoản</span>
+                  <span class="bv">1234 5678 9012
+                    <button class="copy-btn" onclick="copyText('123456789012')">Copy</button>
+                  </span>
+                </div>
+                <div class="bank-row">
+                  <span class="bk">Chủ tài khoản</span>
+                  <span class="bv">PICKLEBALL </span>
+                </div>
+                <div class="bank-row">
+                  <span class="bk">Số tiền</span>
+                  <span class="bv" id="p-transfer-amt">-</span>
+                </div>
+                <div class="bank-row">
+                  <span class="bk">Nội dung</span>
+                  <span class="bv" id="p-ref">-
+                    <button class="copy-btn" onclick="copyRef()">Copy</button>
+                  </span>
+                </div>
+                <div class="qr-box">
+                  <div class="qr-i">⬛</div>
+                  <div>QR mô phỏng cho bài demo</div>
+                </div>
+              </div>
+              <p class="pay-note-txt">Giữ sân trong 30 phút kể từ lúc tạo đơn thanh toán.</p>
+              <button class="btn-confirm" onclick="confirmPay()">Tôi đã chuyển khoản</button>
+            </div>
+
+            <div class="sec-line">Thanh toán bảo mật mô phỏng trong giao diện demo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-success" class="page">
+    <div class="result-page">
+      <div class="result-card">
+        <div class="result-ico-wrap ico-ok">✅</div>
+        <h2>Đặt sân thành công</h2>
+        <p class="result-sub">Hệ thống đã tạo mã xác nhận mẫu để phục vụ việc trình bày bài nhóm.</p>
+
+        <div class="code-box">
+          <div class="code-lbl">Mã xác nhận</div>
+          <div class="code-val" id="s-code">PC-0000</div>
+        </div>
+
+        <div class="result-info">
+          <div class="rrow"><span class="rk">Sân</span><span class="rv" id="s-court">-</span></div>
+          <div class="rrow"><span class="rk">Ngày</span><span class="rv" id="s-date">-</span></div>
+          <div class="rrow"><span class="rk">Giờ chơi</span><span class="rv" id="s-time">-</span></div>
+          <div class="rrow"><span class="rk">Thanh toán</span><span class="rv" id="s-pay">-</span></div>
+          <div class="rrow"><span class="rk">Tổng tiền</span><span class="rv" id="s-total" style="color:var(--primary)">-</span></div>
+        </div>
+
+        <div class="result-actions">
+          <button class="btn-rp btn-rp-primary" onclick="showPage('home')">Về trang chủ</button>
+          <button class="btn-rp btn-rp-ghost" onclick="copySuccessCode()">Sao chép mã</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-failure" class="page">
+    <div class="result-page">
+      <div class="result-card">
+        <div class="result-ico-wrap ico-fail">❌</div>
+        <h2 style="color:var(--danger)">Thanh toán thất bại</h2>
+        <p class="result-sub">Trạng thái này được giữ lại để demo nhánh xử lý lỗi trong hệ thống đặt sân.</p>
+
+        <div class="code-box code-box-fail">
+          <div class="code-lbl">Mã lỗi</div>
+          <div class="code-val code-val-danger" id="f-errcode">ERR-0000</div>
+        </div>
+
+        <div class="result-info">
+          <div class="rrow"><span class="rk">Nguyên nhân</span><span class="rv" style="color:var(--danger)">Giao dịch mô phỏng không thành công</span></div>
+          <div class="rrow"><span class="rk">Sân</span><span class="rv" id="failure-court">-</span></div>
+          <div class="rrow"><span class="rk">Hỗ trợ</span><span class="rv">📞 1800 6868</span></div>
+        </div>
+
+        <div class="result-actions">
+          <button class="btn-rp btn-rp-primary" onclick="showPage('booking')">Thử lại</button>
+          <button class="btn-rp btn-rp-ghost" onclick="toast('Hotline hỗ trợ: 1800 6868','ok')">Liên hệ hỗ trợ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
